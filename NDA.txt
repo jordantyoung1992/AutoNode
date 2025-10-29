@@ -1,0 +1,16 @@
+ONE-PAGE NON-DISCLOSURE AGREEMENT (Mutual)
+
+Parties: ______________________ ("Party A") and ______________________ ("Party B")
+Purpose: Evaluate a potential business relationship regarding tokenized real-world assets, accounts receivable, and prediction markets ("Project").
+Confidential Information: Any non-public information disclosed by a Party, including technical, financial, business, product, code, data, models, or investor information, whether oral, written, or electronic, and any notes derived therefrom.
+Obligations: Receiving Party shall (i) use Confidential Information solely for the Purpose; (ii) protect it with at least reasonable care; (iii) not disclose it to third parties except to its employees/advisors bound by similar duties; (iv) promptly notify of unauthorized use/disclosure; and (v) return or destroy upon request.
+Exclusions: Information not deemed Confidential if: (a) publicly available without breach; (b) independently developed; (c) rightfully received from a third party; or (d) required by law/regulator (with prompt notice where lawful).
+No License: No IP rights are granted other than limited evaluation use. All rights remain with the disclosing Party.
+No Solicitation/Reverse Engineering: Neither Party shall reverse engineer or solicit employees solely to obtain Confidential Information.
+Term: 2 years from the Effective Date; confidentiality for trade secrets survives so long as such information remains a trade secret.
+Remedies: Injunctive relief and all other remedies available at law or equity.
+Governing Law: ____________ (recommend: Wyoming, USA). Venue: ____________.
+Effective Date: ____________.
+Signatures:
+Party A: ____________________  Name/Title: _______________  Date: ______
+Party B: ____________________  Name/Title: _______________  Date: ______
