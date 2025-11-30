@@ -10,8 +10,8 @@ These steps assume a vanilla Windows 10/11 machine with Node.js 18+ and git inst
 
 2. **Install dependencies**
    ```powershell
-   npm install
-   ```
+ npm install
+  ```
 
 3. **Create your environment file**
    Copy the template below into `.env` (PowerShell example uses a here-string):
@@ -27,14 +27,20 @@ These steps assume a vanilla Windows 10/11 machine with Node.js 18+ and git inst
    - If you do not have Fireblocks credentials yet, leave `FIREBLOCKS_API_KEY` empty and the server will automatically fall back to simulated payouts.
    - When you do have the signing key, set `FIREBLOCKS_SECRET_PATH` to the full Windows path (e.g., `C:\keys\fireblocks_secret.pem`).
 
-4. **Run the server**
+4. **Run the server (regular)**
    ```powershell
    npm start
    ```
-   You should see `🚀 Prediction API on 3000` in the console.
+   You should see `🚀 Prediction API on 3000` in the console. Keep the window open while you use the app.
+
+   **Or, use the one-minute helper** (no manual steps):
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File .\windows-quickstart.ps1
+   ```
+   The helper creates `.env` if missing, installs dependencies, and starts the server for you.
 
 5. **Open the UI**
-   Navigate to `http://localhost:3000/index.html` in your browser. The page runs entirely in the browser and calls the local API.
+   Navigate to `http://localhost:3000/` in your browser. The page runs entirely in the browser and calls the local API.
 
 6. **Data and persistence**
    - The ledger lives in `db.json` beside `index.js`. On Windows it is stored in the repo folder (no extra setup required).

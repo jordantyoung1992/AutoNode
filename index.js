@@ -49,8 +49,15 @@ await db.read();
 
 app.use(express.static(__dirname));
 
+// Serve UI at root so new users can just visit http://localhost:3000/
+app.get("/", (_, res) => {
+  const indexPath = path.join(__dirname, "index.html");
+  if (fs.existsSync(indexPath)) return res.sendFile(indexPath);
+  return res.send("✅ RWA Prediction MVP up");
+});
+
 // Health
-app.get("/", (_, res) => res.send("✅ RWA Prediction MVP up"));
+app.get("/health", (_, res) => res.send("ok"));
 
 // Create market: name, metric, resolvesAt (ISO), question, yesPayout, noPayout
 app.post("/market/create", async (req, res) => {
