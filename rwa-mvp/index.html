@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RWA Marketplace MVP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="brand">
+        <span class="dot"></span>
+        <span class="brand-name">Atlas Yield</span>
+      </div>
+      <nav class="nav">
+        <a href="#deals">Deals</a>
+        <a href="#about">How it works</a>
+        <a href="#intake">Submit a deal</a>
+        <a class="primary" href="#waitlist">Join waitlist</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="waitlist">
+      <div class="container hero-content">
+        <div>
+          <p class="eyebrow">Real-World Asset marketplace</p>
+          <h1>Reserve allocations in vetted private credit deals.</h1>
+          <p class="lede">Standardized metrics, fast diligence, and a clear path to allocation requests without handling payments or custody in-app.</p>
+          <div class="actions">
+            <a class="button primary" href="https://tally.so/r/3NpDMZ" target="_blank" rel="noreferrer">Request allocation</a>
+            <a class="button ghost" href="#deals">Browse deals</a>
+          </div>
+          <div class="badges">
+            <span>Self-attested accredited only</span>
+            <span>Zero-fee reservations</span>
+            <span>Weekly drops</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <p class="label">Live metrics</p>
+          <div class="stat">
+            <span class="stat-value" id="stat-apy">10.2%</span>
+            <span class="stat-label">Avg target APY</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" id="stat-ltv">68%</span>
+            <span class="stat-label">Weighted LTV</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" id="stat-tenor">8.5 mo</span>
+            <span class="stat-label">Avg tenor</span>
+          </div>
+          <p class="footnote">Metrics update when you filter deals.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="about">
+      <div class="container band-content">
+        <div>
+          <p class="eyebrow">How it works</p>
+          <h2>Standardized deal pages with frictionless calls to action.</h2>
+          <ul class="checks">
+            <li>Request allocations via Typeform/Tally embeds; we confirm via email.</li>
+            <li>Schedule diligence calls directly on each deal page (Calendly).</li>
+            <li>Originators submit via intake form; we sync to Airtable for review.</li>
+            <li>Disclaimers + self-attestation to keep the experience informational.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>What we ship this week</h3>
+          <ol class="steps">
+            <li>Static site (Astro/Next ready) deployable on Vercel/Netlify.</li>
+            <li>Config-driven deal directory and detail modal.</li>
+            <li>Forms wired to Typeform/Tally; email capture via MailerLite.</li>
+            <li>Analytics ready: drop your Plausible/GA tag in <code>assets/snippets.html</code>.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="container deals" id="deals">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Open allocations</p>
+          <h2>Live deals</h2>
+        </div>
+        <div class="filters">
+          <label>
+            Sector
+            <select id="filter-sector">
+              <option value="all">All</option>
+            </select>
+          </label>
+          <label>
+            Geography
+            <select id="filter-geo">
+              <option value="all">All</option>
+            </select>
+          </label>
+          <label>
+            Min target APY
+            <input type="range" id="filter-apy" min="6" max="20" value="8" />
+            <span class="range-value" id="filter-apy-value">8%+</span>
+          </label>
+        </div>
+      </div>
+
+      <div id="deal-grid" class="deal-grid"></div>
+      <p class="muted">Click a card to view structure, docs, and risk notes.</p>
+    </section>
+
+    <section class="container" id="intake">
+      <div class="split">
+        <div>
+          <p class="eyebrow">Originator intake</p>
+          <h2>Submit your deal for the next drop.</h2>
+          <p>We review track record, servicing, collateral, and jurisdictional fit. Expect a response within 3 business days.</p>
+          <ul class="checks">
+            <li>Asset types: invoices, revenue share, short-term rentals, equipment leases.</li>
+            <li>Provide proof of collections, servicing waterfall, and key covenants.</li>
+            <li>We currently avoid consumer loans and unsecured mezzanine risk.</li>
+          </ul>
+        </div>
+        <div class="card embed">
+          <h3>Intake form</h3>
+          <iframe src="https://tally.so/r/mJ7P23" title="Originator intake" loading="lazy"></iframe>
+          <p class="muted">Replace the iframe URL with your Typeform/Tally link.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="trust">
+      <div class="cards">
+        <div class="card">
+          <h3>Disclaimers</h3>
+          <p>This site is informational only and not an offer to sell securities. Investors self-attest accreditation and acknowledge jurisdictional limits.</p>
+          <p>We do not process funds or custody. Allocations are non-binding until you complete full diligence and definitive docs with the issuer.</p>
+        </div>
+        <div class="card">
+          <h3>Ops & reporting</h3>
+          <ul class="checks">
+            <li>Airtable workspace for leads, allocation requests, and intake status.</li>
+            <li>MailerLite list for updates and drop announcements.</li>
+            <li>Monthly portfolio email with reported repayments and coverage.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Contact</h3>
+          <p>Email <a href="mailto:invest@atlasyield.xyz">invest@atlasyield.xyz</a> or book a slot.</p>
+          <a class="button ghost" href="https://calendly.com" target="_blank" rel="noreferrer">Open Calendly</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="deal-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <button class="close" data-close aria-label="Close">×</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/scripts.js"></script>
+</body>
+</html>
